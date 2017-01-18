@@ -133,12 +133,22 @@ public class BuildVerificationSuiteExecution extends HPUFTIntegrationBase{
 					buildVerificationSuiteResponse = new BuildVerificationSuiteExecutionResponse();
 					buildVerificationSuiteResponse.setEntity(entity);
 					Fields fields = entity.getFields();
-					/*if (fields!=null) {
+					int count = 0;
+					if (fields!=null) {
 						for(Field field : fields.getField()) {
 							System.out.println("field name "+field.getName());
 							System.out.println("field value "+field.getValue());
+							if(field.getName().equalsIgnoreCase("completed-successfully")) {
+								if(field.getValue()!=null){
+									System.out.println("total  repeat attempts.."+count);
+									break;
+								} else {
+									count++;
+									doGetBuildVerificationSuiteExecutionStatus(domainName,projectName, bvsId);
+								}
+							}
 						}
-					}*/
+					}
 				}
 			} catch (Exception e) {
 				
