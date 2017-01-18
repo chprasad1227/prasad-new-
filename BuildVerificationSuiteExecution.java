@@ -101,14 +101,14 @@ public class BuildVerificationSuiteExecution extends HPUFTIntegrationBase{
 					.header("Cookie",cookieValue)
 					.get(ClientResponse.class).get();
 		
-		
+		System.out.println("response.getStatus()..."+response.getStatus())
 		if(response.getStatus() != 200){
 			System.err.println("Unable to connect to the server: response status:"+response.getStatus());
 			//logger.error("Unable to connect to the server"+response.getStatus());
 			throw new RuntimeException("Unable to connect to the server"+response.getStatus());
 		}
 		//read the data 
-		if(response.getStatus()==201 || response.getStatus()== HttpStatus.SC_OK) {
+		if(response.getStatus()== HttpStatus.SC_OK) {
 			try {
 				String responseInXMLString = response.getEntity(String.class);
 				//responseInXMLString="<Entities TotalResults=\"9\"><Entity Type=\"Procedure\"><Fields><Field Name=\"is-valid\"><Value>N</Value></Field></Fields></Entity></Entities>";
