@@ -1,0 +1,7 @@
+http://www.mock-server.com/
+
+http://softwareengineering.stackexchange.com/questions/189866/testing-a-rest-client-against-a-rest-server-how-to-do-fixtures
+
+http://stackoverflow.com/questions/31548931/junit-test-case-for-a-restful-client-using-mockito
+
+https://www.javacodegeeks.com/2011/10/java-restful-api-integration-testing.html
