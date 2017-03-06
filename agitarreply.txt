@@ -1,0 +1,22 @@
+Hello Prasad
+
+We have continued to work on this issue, and have downloaded a large selection of Jersey sample projects from here
+
+https://jersey.java.net/download.html
+where it refers to an "Examples Bundle".  We didn't experience any issues with those so far. 
+
+However, having reviewed all the information we have to hand, we think that Jersey itself may be a red herring and not really the source of the problem.
+
+You mentioned in your previous mail that you are using Java 1.7 .  Looking at the image of the dashboard that you included in a previous email, the IllegalArgumentException refers to a point in the code where we are reading class files.  It appears from the log files we have from you that your Agitar version is 6.0.0.000016 .  The maximum supported Java version in release 6.0 of Agitar is 1.7 .  However, looking at the location of the exception, the code at that point is testing the version of the class files that it is reading, and the exception is thrown if the class file version is later than 1.7 .
+
+This leads us to strongly believe that there are components on the classpath that contain class files compiled with Java 1.8 .  There are two ways to proceed from here
+
+1.  Carefully analyse the classpath to eliminate anything compiled with Java 1.8 .  Note that in Eclipse, it is quite possible to select 1.7 as the target level for a project, with a 1.8 version of the JRE in place.  If you select your project and then do "Properties" from the context menu, then "Java Build Path" in the left hand frame, you can select the "Libraries" tab in the right hand side.  If you expand the "JRE System Library", entry, where do the jar files come from?
+
+2.  Alternatively, you could upgrade your Agitar client software to version 6.1, which has full support for Java 1.8 anyway.  We believe that we have supplied the necessary jar files bundled in a zip to another user in AmEx before, and we could do so again, or check who it was so you could contact them.
+
+Hopefully this helps us to progress the issue and we look forward to hearing from you.
+
+Thanks and regards
+
+Agitar Support
