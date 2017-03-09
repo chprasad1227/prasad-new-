@@ -1,7 +1,0 @@
-Hi,
-Thank you for the response.
-
-We have analysed same regarding this issue but could not find any cause for this issue. 
-However, We are not using any Annotations,As part of our application, we are just consuming the REST service(s) using  JERSEY client API and tt does not required to use any annotations for creating jesey client object.
-
-Attaching code snippent of How we are intializing Jersey client and invoking Authentication Service. 
